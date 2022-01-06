@@ -2,7 +2,6 @@ import classes from './GuestItem.module.css';
 import Card from '../ui/Card';
 import '../../App.css';
 
-
 function GuestItem(props) {
   return (
     <li className='item-container'>
