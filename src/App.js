@@ -6,11 +6,13 @@ import NewGuestPage from './pages/NewGuestPage';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<LoginPage />} />
-      <Route path="/all-guests" element={<AllGuestsPage />} />
-      <Route path="/new-guest" element={<NewGuestPage />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/all-guests" element={<AllGuestsPage />} />
+        <Route path="/new-guest" element={<NewGuestPage />} />
+      </Routes>
+    </>
   );
 };
 

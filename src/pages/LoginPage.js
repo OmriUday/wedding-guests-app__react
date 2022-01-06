@@ -1,12 +1,12 @@
 import React from "react";
-import './login.css';
+import '../App.css';
 import { useNavigate } from "react-router-dom";
 import { auth, googleProvider } from "../api/firebase-config";
 import { signInWithPopup } from "firebase/auth";
 
 function LoginPage() {
   let navigate = useNavigate();
-
+  
   const signInWithGoogle = () => {
     signInWithPopup(auth, googleProvider).then((result) => {
       localStorage.setItem('isAuth', auth.currentUser.displayName);
@@ -16,8 +16,8 @@ function LoginPage() {
 
   return (
     <div className="loginPage">
-      <p>Sign In With Google to Continue</p>
-      <button className="login-with-google-btn" onClick={signInWithGoogle}>
+      <p className='LoginFadeInDown animatedLogin'>Sign In With Google to Continue</p>
+      <button className="login-with-google-btn LoginFadeInUp animatedLogin" onClick={signInWithGoogle}>
         Sign in with Google
       </button>
     </div>

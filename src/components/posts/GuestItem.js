@@ -1,18 +1,21 @@
 import classes from './GuestItem.module.css';
 import Card from '../ui/Card';
+import '../../App.css';
+
 
 function GuestItem(props) {
+  console.log(props.localClock);
   return (
-    <li className={classes.item}>
+    <li className='item-container'>
       <Card className={classes.card}>
         <div>
-          <p className={classes.date}>Date</p>
-          <p className={classes.byUser}>By {localStorage.isAuth}</p>
+          <p className={classes.date}>Posted {props.localDate} at {props.localClock}</p>
+          <p className={classes.author}>Created by: {props.author}</p>
         </div>
         <div className={classes.content}>
-          <h2 className={classes.guestName}>Guest name: {props.title}</h2>
-          <h2>Number of attendants: {props.name}</h2>
-          <h2 className={classes.description}>Remarks: {props.description}</h2>
+          <h2 className={classes.guestName}>Product: {props.title}</h2>
+          <h2>Qty: {props.name}</h2>
+          <h2 className={classes.description}>Description: {props.description}</h2>
         </div>
         <div className={classes.actions}>
           <button className={classes.button}>Delete</button>

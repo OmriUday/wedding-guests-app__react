@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
-import classes from './AllGuestsPage.module.css';
+import '../App.css';
 import NavBar from '../components/layout/NavBar';
 import GuestList from '../components/posts/GuestList';
 
 function AllGuestsPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedGuests, setLoadedGuests] = useState([]);
+  const numberOfPosts = loadedGuests.length;
 
   useEffect(() => {
-    setIsLoading(true);
     fetch('https://wrdding-app-react-default-rtdb.firebaseio.com/posts.json')
       .then((response) => {
         return response.json();
@@ -30,19 +30,22 @@ function AllGuestsPage() {
 
   if (isLoading) {
     return (
-      <section className={classes.loaderContainer}>
-        <p className={classes.loading}>Loading...</p> 
-        <div className={classes.loader}></div>
+      <section className='loaderContainer transition-fade'>
+        <p className='loading'>Loading...</p>
+        <div className='loader'></div>
       </section>
     );
   }
 
   return (
-    <section className={classes.container}>
+    <>
       <NavBar />
-      <h1 className={classes.title}>All Guests</h1>
-      <GuestList className={classes.main} posts={loadedGuests} />
-    </section>
+      <section id='fadein' className='fadein AllGuestsPage-container'>
+        <h1 className='AllGuestsPage-title'>All Guests</h1>
+        <h6 className='AllGuestsPage-subTitle'>Total posts found: {numberOfPosts}</h6>
+        <GuestList className='AllGuestsPage-main' posts={loadedGuests} />
+      </section>
+    </>
   );
 };
 

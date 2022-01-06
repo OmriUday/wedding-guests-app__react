@@ -49,8 +49,8 @@ function NavBar() {
             <li>
               <Link to='/new-guest'>New Guest</Link>
             </li>
-            <li><span onClick={openModalHandler}>
-              Logout</span>
+            <li>
+              <span onClick={openModalHandler}>Logout</span>
             </li>
           </ul>
         </div>
