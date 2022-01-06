@@ -44,10 +44,10 @@ function NavBar() {
         <div className={linksToggle ? 'active' : 'navbar-links'}>
           <ul>
             <li>
-              <Link to='/all-guests'>All Guests</Link>
+              <Link to='/all-guests'>All requests</Link>
             </li>
             <li>
-              <Link to='/new-guest'>New Guest</Link>
+              <Link to='/new-guest'>New requests</Link>
             </li>
             <li>
               <span onClick={openModalHandler}>Logout</span>

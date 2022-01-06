@@ -4,7 +4,6 @@ import '../../App.css';
 
 
 function GuestItem(props) {
-  console.log(props.localClock);
   return (
     <li className='item-container'>
       <Card className={classes.card}>
@@ -14,7 +13,7 @@ function GuestItem(props) {
         </div>
         <div className={classes.content}>
           <h2 className={classes.guestName}>Product: {props.title}</h2>
-          <h2>Qty: {props.name}</h2>
+          <h2 className={classes.qty}>Qty: {props.name}</h2>
           <h2 className={classes.description}>Description: {props.description}</h2>
         </div>
         <div className={classes.actions}>

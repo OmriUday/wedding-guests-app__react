@@ -37,7 +37,7 @@ function NewGuestForm(props) {
   }
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className="form">
       <div>
         <label htmlFor='title'>Guest name</label>
         <input type="text" required id="title" ref={titleInputRef} />

@@ -31,8 +31,9 @@ function AllGuestsPage() {
   if (isLoading) {
     return (
       <section className='loaderContainer transition-fade'>
-        <p className='loading'>Loading...</p>
         <div className='loader'></div>
+        <div className='loadingText'>Loading...</div>
+
       </section>
     );
   }
@@ -40,9 +41,9 @@ function AllGuestsPage() {
   return (
     <>
       <NavBar />
-      <section id='fadein' className='fadein AllGuestsPage-container'>
-        <h1 className='AllGuestsPage-title'>All Guests</h1>
-        <h6 className='AllGuestsPage-subTitle'>Total posts found: {numberOfPosts}</h6>
+      <h1 className='AllGuestsPage-title animatedAllGuestsFadeUp AllGuestsFadeUp animatedLogin'>All requests</h1>
+      <h6 className='AllGuestsPage-subTitle animatedAllGuestsFadeUp AllGuestsFadeUp animatedLogin'>Total posts found: {numberOfPosts}</h6>
+      <section id='fadein' className='fadein'>
         <GuestList className='AllGuestsPage-main' posts={loadedGuests} />
       </section>
     </>

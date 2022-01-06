@@ -10,14 +10,14 @@ function NewGuestPage() {
   // Here I Send The Form Submit Data To FireBase With Http Request
   function addNewGuestHandler(postData) {
     writeUserData(postData);
-    navigate('/all-guests');
+    navigate('/all-guests')
   };
 
   return (
     <>
       <NavBar />
-      <section>
-        <h1 className='NewGuestPage-title'>Add New Post</h1>
+      <h1 className='NewGuestPage-title'>Add new request</h1>
+      <section className="newGuestsContaier">
         <NewGuestForm onAddNewGuest={addNewGuestHandler} />
       </section>
     </>
